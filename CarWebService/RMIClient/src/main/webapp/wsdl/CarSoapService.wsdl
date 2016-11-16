@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://soap.app.webservice.upem.fr" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://soap.app.webservice.upem.fr" xmlns:intf="http://soap.app.webservice.upem.fr" xmlns:tns1="http://interfaces.shared.rmi.upem.fr" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://soap.app.webservice.upem.fr" xmlns="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://interfaces.shared.rmi.upem.fr"/>
+   <element name="addMember">
+    <complexType>
+     <sequence>
+      <element name="memberType" type="xsd:string"/>
+      <element name="firstName" type="xsd:string"/>
+      <element name="lastName" type="xsd:string"/>
+      <element name="accountId" type="xsd:int"/>
+      <element name="password" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addMemberResponse">
+    <complexType>
+     <sequence>
+      <element name="addMemberReturn" type="impl:SoapMember"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="SoapMember">
+    <sequence>
+     <element name="description" nillable="true" type="xsd:string"/>
+     <element name="firstName" nillable="true" type="xsd:string"/>
+     <element name="lastName" nillable="true" type="xsd:string"/>
+     <element name="member" nillable="true" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <element name="getProduct">
+    <complexType>
+     <sequence>
+      <element name="productId" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getProductResponse">
+    <complexType>
+     <sequence>
+      <element name="getProductReturn" type="impl:SoapProduct"/>
+     </sequence>
+    </complexType>
+   </element>
+   <complexType name="SoapProduct">
+    <sequence>
+     <element name="brand" nillable="true" type="xsd:string"/>
+     <element name="model" nillable="true" type="xsd:string"/>
+     <element name="price" type="xsd:double"/>
+     <element name="product" nillable="true" type="xsd:anyType"/>
+    </sequence>
+   </complexType>
+   <element name="allProducts">
+    <complexType/>
+   </element>
+   <element name="allProductsResponse">
+    <complexType>
+     <sequence>
+      <element maxOccurs="unbounded" name="allProductsReturn" type="impl:SoapProduct"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addProduct">
+    <complexType>
+     <sequence>
+      <element name="brand" type="xsd:string"/>
+      <element name="model" type="xsd:string"/>
+      <element name="price" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="addProductResponse">
+    <complexType/>
+   </element>
+   <element name="getMember">
+    <complexType>
+     <sequence>
+      <element name="id" type="xsd:int"/>
+      <element name="password" type="xsd:string"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getMemberResponse">
+    <complexType>
+     <sequence>
+      <element name="getMemberReturn" type="impl:SoapMember"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="addProductRequest">
+
+      <wsdl:part element="impl:addProduct" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getProductRequest">
+
+      <wsdl:part element="impl:getProduct" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="allProductsRequest">
+
+      <wsdl:part element="impl:allProducts" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addProductResponse">
+
+      <wsdl:part element="impl:addProductResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMemberResponse">
+
+      <wsdl:part element="impl:getMemberResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getProductResponse">
+
+      <wsdl:part element="impl:getProductResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addMemberRequest">
+
+      <wsdl:part element="impl:addMember" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="addMemberResponse">
+
+      <wsdl:part element="impl:addMemberResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getMemberRequest">
+
+      <wsdl:part element="impl:getMember" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="allProductsResponse">
+
+      <wsdl:part element="impl:allProductsResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="CarSoapService">
+
+      <wsdl:operation name="addMember">
+
+         <wsdl:input message="impl:addMemberRequest" name="addMemberRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addMemberResponse" name="addMemberResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getProduct">
+
+         <wsdl:input message="impl:getProductRequest" name="getProductRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getProductResponse" name="getProductResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="allProducts">
+
+         <wsdl:input message="impl:allProductsRequest" name="allProductsRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:allProductsResponse" name="allProductsResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addProduct">
+
+         <wsdl:input message="impl:addProductRequest" name="addProductRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:addProductResponse" name="addProductResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMember">
+
+         <wsdl:input message="impl:getMemberRequest" name="getMemberRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getMemberResponse" name="getMemberResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="CarSoapServiceSoapBinding" type="impl:CarSoapService">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="addMember">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addMemberRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addMemberResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getProduct">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getProductRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getProductResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="allProducts">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="allProductsRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="allProductsResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="addProduct">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="addProductRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="addProductResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="getMember">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getMemberRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getMemberResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="CarSoapServiceService">
+
+      <wsdl:port binding="impl:CarSoapServiceSoapBinding" name="CarSoapService">
+
+         <wsdlsoap:address location="http://localhost:8080/rmi-client/services/CarSoapService"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>

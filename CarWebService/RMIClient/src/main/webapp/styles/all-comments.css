@@ -1,0 +1,71 @@
+#all-comments{
+    width:70%;
+    margin:auto;
+    background-opacity:0;
+}
+
+.one-comment{
+    background:none !important;
+    height:120px !important;
+}
+
+.alert{
+    margin:auto;
+    width:80%;
+    height:90px;
+    word-wrap:break-word;
+}
+
+table tr:nth-child(even) {
+    border-radius:15px;
+    background-color: #eef6fa;
+    width:100%;
+}
+
+table tr:nth-child(odd) {
+    background-color:#fff;
+}
+
+.pre-scrollable{
+    margin-top:20%;
+    border-radius:5px;
+    background:linear-gradient(#e6f9ff,#80dfff);
+    box-shadow:1px 1px 13px 1px #b3ddb3;
+    height:55%;
+    max-height: 65%;
+    clear:both;
+}
+
+.container{
+    width:70%;
+}
+
+#rating{
+    font-size: 24px;
+    font-weight: bolder;
+    float:right;
+    width:30%;
+    line-height: 200%;
+    padding-left: 5%;
+}
+
+#rating > small{
+    font-size:12px;
+}
+
+#car-info{
+    float:left;
+    width:40%;
+    overflow: auto;
+}
+
+.bottom{
+    float:right;
+    margin-top:1%;
+    margin-right:2%;
+}
+
+.table tr.car-info-detail{
+    color:blue ;
+    background:none !important;;
+}

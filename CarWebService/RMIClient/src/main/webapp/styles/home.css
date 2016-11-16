@@ -1,0 +1,144 @@
+html{
+    height:100%;
+}
+body{
+    height: 100%;
+    background-repeat: no-repeat;
+    background: linear-gradient( rgba(67, 197, 214, 0.54), rgba(26, 65, 146, 0.17));
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+table th{
+    background : rgb(56, 180, 70);
+    border : 1px solid rgba(48, 156, 68, 0.56);
+    border-bottom: none;
+    color:white;
+    font-size:16px;
+}
+
+.center-cell{
+    text-align : center;
+}
+
+table tr:nth-child(even) {
+    background-color: #eef6fa;
+}
+
+table tr:nth-child(odd) {
+    background-color:#fff;
+}
+
+th#user_name{
+    background:none !important;
+    font-size: 18px;
+    border: none !important;
+    text-align:center;
+}
+
+td.disconnect-label{
+    border-radius: 5px;
+    padding:5%;
+    background: rgba(255, 203, 90, 0.93) !important;
+    border: none !important;
+    font-size: 12px;
+    color:white !important;
+}
+
+form.buy-rent{
+    display:inline;
+}
+
+.navbar-right{
+    margin-left:40px;
+}
+
+.btn{
+    float:left;
+    margin:1px;
+}
+
+small.current-currency{
+    color: #515151;
+}
+
+form#buyCurrentProduct {
+    margin: 0;
+}
+
+
+
+
+
+
+
+
+
+
+/*              */
+
+
+
+/* Dropdown Button */
+.dropbtn {
+    background-color: rgb(39, 187, 129);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition:1s;
+    border-radius:5px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    border-radius:5px;
+    z-index:1000;
+    display: none;
+    position: absolute;
+    background-color: #fffadc;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(60, 60, 60, 0.2);
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+.cant-be-bought {
+    background: rgba(255, 176, 0, 0.55);
+}
+
+.buy-btn {
+    color: #822727 !important;
+    background: #ff9000;
+}
+
+.buy-btn:hover {
+    color:white !important;
+    background: rgba(255, 0, 0, 0.63) !important;
+}

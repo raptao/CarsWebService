@@ -1,0 +1,26 @@
+.container{
+    width: 60%;
+}
+
+tr.account-info{
+    color:#004080;
+    background:#66d9ff !important;
+}
+
+
+tr.car-info{
+    color:black;
+    background: linear-gradient( #00b300, #00e600) !important;
+    opacity:0.8
+}
+
+tr.car-info-detail{
+    color:#006600;
+    background:#99ff66
+    !important;
+}
+
+.cnrflash-inner
+{
+    background: rgba(255, 0, 0, 0.78);
+}

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.devMode" value="false"/>
+
+    <package name="basicstruts2" extends="struts-default">
+
+        <action name="index">
+            <result>/index.jsp</result>
+        </action>
+
+        <action name="logIn"
+                class="fr.upem.webservice.app.action.LoggingAction"
+                method="execute">
+            <result name="success">/home.jsp</result>
+            <result name="error">/nosuchuser.jsp</result>
+        </action>
+        <action name="registration"
+                class="fr.upem.webservice.app.action.RegisterAction"
+                method="execute">
+            <result name="success">/confirm-registration.jsp</result>
+            <result name="error">/index.jsp</result>
+        </action>
+
+        <!-- home page actions-->
+        <action name="disconnect"
+                class="fr.upem.webservice.app.action.HomePageAction"
+                method="disconnect">
+            <result name="success">/index.jsp</result>
+        </action>
+
+        <action name="rent"
+                class="fr.upem.webservice.app.action.HomePageAction"
+                method="rent">
+            <result name="success">/home.jsp</result>
+            <result name="error">/index.jsp</result>
+        </action>
+
+        <action name="buy"
+                class="fr.upem.webservice.app.action.HomePageAction"
+                method="buy">
+            <result name="success">/buy.jsp</result>
+            <result name="error">/index.jsp</result>
+        </action>
+
+        <action name="changeCurrency"
+                class="fr.upem.webservice.app.action.CurrencyChangerAction"
+                method="execute">
+            <result name="success">/home.jsp</result>
+            <result name="error">/index.jsp</result>
+        </action>
+        <action name="getAllComments"
+                class="fr.upem.webservice.app.action.HomePageAction"
+                method="getAllComments">
+            <result name="success">/allComments.jsp</result>
+            <result name="error">/index.jsp</result>
+            <result name="input">/home.jsp</result>
+        </action>
+        <!-- ****************************************  -->
+        <!--current car action-->
+        <action name="buyCurrentProduct"
+                class="fr.upem.webservice.app.action.CurrentCarAction"
+                method="buy">
+            <result name="success">/buy.jsp</result>
+            <result name="error">/index.jsp</result>
+
+        </action>
+        <action name="commentCurrentProduct"
+                class="fr.upem.webservice.app.action.CurrentCarAction"
+                method="comment">
+            <result name="success">/allComments.jsp</result>
+            <result name="error">/index.jsp</result>
+        </action>
+        <action name="restoreCurrentProduct"
+                class="fr.upem.webservice.app.action.CurrentCarAction"
+                method="restore">
+            <result name="success">/home.jsp</result>
+            <result name="error">/index.jsp</result>
+        </action>
+        <!-- ****************************************  -->
+        <!-- add car page -->
+        <action name="add"
+                class="fr.upem.webservice.app.action.AddCarAction"
+                method="execute">
+            <result name="success">/home.jsp</result>
+            <result name="input">/index.jsp</result>
+            <result name="error">/not-added.jsp</result>
+        </action>
+
+        <action name="buySelectedCar"
+        class="fr.upem.webservice.app.action.BuyCarAction"
+        method="execute">
+            <result name="success">/home.jsp</result>
+            <result name="input">/home.jsp</result>
+            <result name="error">/index.jsp</result>
+        </action>
+
+        <action name="change-buy-currency"
+                class="fr.upem.webservice.app.action.CurrencyChangerAction"
+                method="execute">
+            <result name="success">/buy.jsp</result>
+            <result name="error">/index.jsp</result>
+        </action>
+
+    </package>
+
+</struts>

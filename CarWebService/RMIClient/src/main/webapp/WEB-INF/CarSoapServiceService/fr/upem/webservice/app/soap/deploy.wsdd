@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from CarSoapServiceService WSDL service -->
+
+  <service name="CarSoapService" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://soap.app.webservice.upem.fr"/>
+      <parameter name="wsdlServiceElement" value="CarSoapServiceService"/>
+      <parameter name="schemaQualified" value="http://soap.app.webservice.upem.fr"/>
+      <parameter name="wsdlServicePort" value="CarSoapService"/>
+      <parameter name="className" value="fr.upem.webservice.app.soap.CarSoapService"/>
+      <parameter name="wsdlPortType" value="CarSoapService"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://soap.app.webservice.upem.fr" xmlns:retNS="http://soap.app.webservice.upem.fr" xmlns:rtns="http://soap.app.webservice.upem.fr" name="addMember" qname="operNS:addMember" returnQName="retNS:addMemberReturn" returnType="rtns:SoapMember" soapAction="">
+        <parameter xmlns:pns="http://soap.app.webservice.upem.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:memberType" type="tns:string"/>
+        <parameter xmlns:pns="http://soap.app.webservice.upem.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:firstName" type="tns:string"/>
+        <parameter xmlns:pns="http://soap.app.webservice.upem.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:lastName" type="tns:string"/>
+        <parameter xmlns:pns="http://soap.app.webservice.upem.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:accountId" type="tns:int"/>
+        <parameter xmlns:pns="http://soap.app.webservice.upem.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:password" type="tns:string"/>
+      </operation>
+      <operation xmlns:operNS="http://soap.app.webservice.upem.fr" xmlns:retNS="http://soap.app.webservice.upem.fr" xmlns:rtns="http://soap.app.webservice.upem.fr" name="getProduct" qname="operNS:getProduct" returnQName="retNS:getProductReturn" returnType="rtns:SoapProduct" soapAction="">
+        <parameter xmlns:pns="http://soap.app.webservice.upem.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:productId" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://soap.app.webservice.upem.fr" xmlns:retNS="http://soap.app.webservice.upem.fr" xmlns:rtns="http://soap.app.webservice.upem.fr" name="allProducts" qname="operNS:allProducts" returnQName="retNS:allProductsReturn" returnType="rtns:SoapProduct" soapAction="">
+      </operation>
+      <operation xmlns:operNS="http://soap.app.webservice.upem.fr" name="addProduct" qname="operNS:addProduct" soapAction="">
+        <parameter xmlns:pns="http://soap.app.webservice.upem.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:brand" type="tns:string"/>
+        <parameter xmlns:pns="http://soap.app.webservice.upem.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:model" type="tns:string"/>
+        <parameter xmlns:pns="http://soap.app.webservice.upem.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:price" type="tns:int"/>
+      </operation>
+      <operation xmlns:operNS="http://soap.app.webservice.upem.fr" xmlns:retNS="http://soap.app.webservice.upem.fr" xmlns:rtns="http://soap.app.webservice.upem.fr" name="getMember" qname="operNS:getMember" returnQName="retNS:getMemberReturn" returnType="rtns:SoapMember" soapAction="">
+        <parameter xmlns:pns="http://soap.app.webservice.upem.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:id" type="tns:int"/>
+        <parameter xmlns:pns="http://soap.app.webservice.upem.fr" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:password" type="tns:string"/>
+      </operation>
+      <parameter name="allowedMethods" value="addMember getProduct addProduct getMember allProducts"/>
+
+      <arrayMapping xmlns:ns="http://soap.app.webservice.upem.fr" xmlns:cmp-ns="http://soap.app.webservice.upem.fr" qname="ns:&gt;allProductsResponse" type="java:fr.upem.webservice.app.soap.SoapProduct[]" innerType="cmp-ns:SoapProduct" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://soap.app.webservice.upem.fr" qname="ns:&gt;addMember" type="java:fr.upem.webservice.app.soap.AddMember" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://soap.app.webservice.upem.fr" qname="ns:&gt;getMember" type="java:fr.upem.webservice.app.soap.GetMember" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://soap.app.webservice.upem.fr" qname="ns:SoapProduct" type="java:fr.upem.webservice.app.soap.SoapProduct" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://soap.app.webservice.upem.fr" qname="ns:&gt;getMemberResponse" type="java:fr.upem.webservice.app.soap.GetMemberResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://soap.app.webservice.upem.fr" qname="ns:&gt;getProduct" type="java:fr.upem.webservice.app.soap.GetProduct" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://soap.app.webservice.upem.fr" qname="ns:&gt;allProducts" type="java:fr.upem.webservice.app.soap.AllProducts" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://soap.app.webservice.upem.fr" qname="ns:SoapMember" type="java:fr.upem.webservice.app.soap.SoapMember" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://soap.app.webservice.upem.fr" qname="ns:&gt;addProduct" type="java:fr.upem.webservice.app.soap.AddProduct" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://soap.app.webservice.upem.fr" qname="ns:&gt;addMemberResponse" type="java:fr.upem.webservice.app.soap.AddMemberResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://soap.app.webservice.upem.fr" qname="ns:&gt;getProductResponse" type="java:fr.upem.webservice.app.soap.GetProductResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://soap.app.webservice.upem.fr" qname="ns:&gt;addProductResponse" type="java:fr.upem.webservice.app.soap.AddProductResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

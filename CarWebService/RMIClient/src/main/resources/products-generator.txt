@@ -1,0 +1,16 @@
+car 1 bmw i3-22-kWh 20000 2011-11-12
+car 2 bmw i3-33-kWh 3000 2013-11-12
+car 3 bolloré bluecar 5000 2012-11-12
+car 4 bolloré bluesummer 1500 2013-11-12
+car 5 kia soul-EV 8000 2006-11-12
+car 6 mitsubishi i-MiEV 1500 2006-09-12
+car 7 nissan e-NV200-Evalia 1000 2004-11-11
+car 8 nissan leaf-2.0 1000 2006-11-12
+car 9 nissan leaf-30kWh 5000 2006-11-12
+car 10 renault ZOE 1600 2012-11-12
+car 11 tesla Model-S 1000 2011-11-12
+car 12 peugeot iOn 1000 2009-11-12
+car 13 venturi fetish 30000 2005-11-12
+car 14 citroyen c-zero 3000 2001-11-12
+car 15 ford focus-electric 5000 2006-05-07
+car 16 mercedes classe-B-250e 15000 2006-05-07

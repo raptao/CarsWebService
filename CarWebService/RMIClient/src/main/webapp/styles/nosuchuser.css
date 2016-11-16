@@ -1,0 +1,73 @@
+html{
+    height:100%;
+}
+body{
+    height: 100%;
+    background-repeat: no-repeat;
+    background: linear-gradient( rgba(255, 228, 141, 0.98), #89e0f7);
+    margin: 0;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+blockquote{
+    border-left:none;
+    margin:auto;
+}
+
+.quote-badge{
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.quote-box{
+
+    overflow: hidden;
+    margin-top: -50px;
+    padding-top: -100px;
+    border-radius: 17px;
+    background-color: #f36464;
+    margin-top: 25px;
+    color:white;
+    width: 325px;
+    box-shadow: 1px 2px 10px 2px #f2f2f2;
+
+}
+
+.quotation-mark{
+
+    margin-top: -10px;
+    font-weight: bold;
+    font-size:100px;
+    color:white;
+    font-family: "Times New Roman", Georgia, Serif;
+
+}
+
+.quote-text{
+
+    font-size: 19px;
+    margin-top: -65px;
+}
+
+.back-button{
+    margin:auto;
+    background-color:white;
+    width:50%;
+    margin-top:2%;
+}
+
+.btn{
+
+    margin:auto;
+    float:right;
+}
+
+.register-button > .btn-warning{
+    clear:left;
+    color:black !important;
+    background:#ffa92e !important;
+    transition: 0.5s ;
+}
+
+.register-button > .btn-warning:hover{
+    background:#ffdd55 !important;
+}

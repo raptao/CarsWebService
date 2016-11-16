@@ -1,0 +1,47 @@
+.col-xs-8{
+    display:block;
+
+    margin: auto 0 !important;
+    width: 100%;
+    padding: 10px;
+
+}
+
+
+.panel-body{
+
+    width:100%;
+    margin: auto;
+    padding-left:10%
+}
+
+.currency:hover{
+    text-decoration: underline;
+}
+
+.balance-overview{
+    background: #ccffcc;
+    width: 50%;
+    margin: auto;
+    border-radius : 4px;
+    box-shadow: 1px 1px 10px black
+}
+
+.currency-row .col-xs-9{
+    margin-right: 2%;
+    width:60%
+}
+
+.text-right{
+    color:#002e4d;
+    margin-right:0;
+}
+
+.minus{
+    color:#f58080;
+    font-weight: bolder;
+}
+
+.car-price{
+    margin-top:5%;
+}
